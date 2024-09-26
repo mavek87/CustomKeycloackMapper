@@ -17,3 +17,4 @@ This project demonstrates how to add a custom mapper that allows a client to sen
 ## Reference material:
 
 - https://www.baeldung.com/keycloak-custom-protocol-mapper
+- https://maikkingma.medium.com/create-a-custom-authentication-provider-in-keycloak-0554d1f7136b
