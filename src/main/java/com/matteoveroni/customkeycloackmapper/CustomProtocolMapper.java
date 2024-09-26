@@ -20,12 +20,15 @@ import org.slf4j.LoggerFactory;
 
 public class CustomProtocolMapper extends AbstractOIDCProtocolMapper implements OIDCAccessTokenMapper, OIDCIDTokenMapper, UserInfoTokenMapper {
 
-    public static final String PROVIDER_ID = "custom-protocol-mapper";
-    public static final String DEFAULT_CONFIG_PROPERTIES = "/keycloack-custom-mapper.properties";
-
     private static final Logger log = LoggerFactory.getLogger(CustomProtocolMapper.class);
     private static final List<ProviderConfigProperty> configProperties = new ArrayList<>();
     private static final List<String> customClaims = CustomClaimsPropertiesReader.loadCustomClaimsFromConfig(DEFAULT_CONFIG_PROPERTIES);
+
+    public static final String CATEGORY = "Token Mapper";
+    public static final String TYPE = "Custom Token Mapper";
+    public static final String HELP_TEXT = "Adds a custom claim sent by the client in the form request";
+    public static final String PROVIDER_ID = "custom-protocol-mapper";
+    public static final String DEFAULT_CONFIG_PROPERTIES = "/keycloack-custom-mapper.properties";
 
     static {
         OIDCAttributeMapperHelper.addTokenClaimNameConfig(configProperties);
@@ -34,27 +37,27 @@ public class CustomProtocolMapper extends AbstractOIDCProtocolMapper implements 
 
     @Override
     public String getDisplayCategory() {
-        return "Token Mapper";
+        return CATEGORY;
     }
 
     @Override
     public String getDisplayType() {
-        return "Custom Token Mapper";
+        return TYPE;
     }
 
     @Override
     public String getHelpText() {
-        return "Adds a Baeldung text to the claim";
-    }
-
-    @Override
-    public List<ProviderConfigProperty> getConfigProperties() {
-        return configProperties;
+        return HELP_TEXT;
     }
 
     @Override
     public String getId() {
         return PROVIDER_ID;
+    }
+
+    @Override
+    public List<ProviderConfigProperty> getConfigProperties() {
+        return configProperties;
     }
 
     @Override
@@ -79,7 +82,7 @@ public class CustomProtocolMapper extends AbstractOIDCProtocolMapper implements 
     /**
      * Adds a claim to the token if the specified parameter is present in the multipart parameters.
      *
-     * @param token                The IDToken
+     * @param token                 The IDToken
      * @param multiPartFormParams   The multipart parameters of the request
      * @param paramName             The name of the parameter/claim to add
      */
