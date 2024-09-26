@@ -20,15 +20,15 @@ import org.slf4j.LoggerFactory;
 
 public class CustomProtocolMapper extends AbstractOIDCProtocolMapper implements OIDCAccessTokenMapper, OIDCIDTokenMapper, UserInfoTokenMapper {
 
-    private static final Logger log = LoggerFactory.getLogger(CustomProtocolMapper.class);
-    private static final List<ProviderConfigProperty> configProperties = new ArrayList<>();
-    private static final List<String> customClaims = CustomClaimsPropertiesReader.loadCustomClaimsFromConfig(DEFAULT_CONFIG_PROPERTIES);
-
     public static final String CATEGORY = "Token Mapper";
     public static final String TYPE = "Custom Token Mapper";
     public static final String HELP_TEXT = "Adds a custom claim sent by the client in the form request";
     public static final String PROVIDER_ID = "custom-protocol-mapper";
     public static final String DEFAULT_CONFIG_PROPERTIES = "/keycloack-custom-mapper.properties";
+
+    private static final Logger log = LoggerFactory.getLogger(CustomProtocolMapper.class);
+    private static final List<ProviderConfigProperty> configProperties = new ArrayList<>();
+    private static final List<String> customClaims = CustomClaimsPropertiesReader.loadCustomClaimsFromConfig(DEFAULT_CONFIG_PROPERTIES);
 
     static {
         OIDCAttributeMapperHelper.addTokenClaimNameConfig(configProperties);
