@@ -12,14 +12,14 @@ public class CustomClaimsPropertiesReader {
 
     private static final Logger log = LoggerFactory.getLogger(CustomClaimsPropertiesReader.class);
 
-    private static final String KEYCLOACK_CUSTOM_CLAIMS = "keycloak.custom.claims";
+    private static final String KEYCLOAK_CUSTOM_CLAIMS = "keycloak.custom.claims";
 
     private CustomClaimsPropertiesReader() {
     }
 
     public static List<String> loadCustomClaimsFromConfig(String configPropFile) {
         Properties properties = loadPropertiesFromResources(configPropFile);
-        String claims = properties.getProperty(KEYCLOACK_CUSTOM_CLAIMS, null);
+        String claims = properties.getProperty(KEYCLOAK_CUSTOM_CLAIMS, null);
         return claims == null || claims.isBlank()
                 ? List.of()
                 : List.of(claims.split(","));

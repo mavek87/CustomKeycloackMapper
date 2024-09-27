@@ -24,7 +24,7 @@ public class CustomProtocolMapper extends AbstractOIDCProtocolMapper implements 
     public static final String TYPE = "Custom Token Mapper";
     public static final String HELP_TEXT = "Adds a custom claim sent by the client in the form request";
     public static final String PROVIDER_ID = "custom-protocol-mapper";
-    public static final String DEFAULT_CONFIG_PROPERTIES = "/keycloack-custom-mapper.properties";
+    public static final String DEFAULT_CONFIG_PROPERTIES = "/keycloak-custom-mapper.properties";
 
     private static final Logger log = LoggerFactory.getLogger(CustomProtocolMapper.class);
     private static final List<ProviderConfigProperty> configProperties = new ArrayList<>();
