@@ -2,7 +2,7 @@ plugins {
     id "java-library"
 }
 
-group = "com.matteoveroni.customkeycloackmapper"
+group = "com.matteoveroni.customkeycloakmapper"
 
 repositories {
     mavenCentral()
@@ -12,7 +12,7 @@ ext {
     gradleWrapperVersion = "8.10.1"
     junitVersion = "5.10.0"
     slf4jVersion = "2.0.16"
-    keycloackVersion = "25.0.6"
+    keycloakVersion = "25.0.6"
 }
 
 wrapper {
@@ -22,10 +22,10 @@ wrapper {
 dependencies {
     compileOnly "org.slf4j:slf4j-api:${slf4jVersion}"
 
-    implementation "org.keycloak:keycloak-core:${keycloackVersion}"
-    implementation "org.keycloak:keycloak-server-spi:${keycloackVersion}"
-    implementation "org.keycloak:keycloak-server-spi-private:${keycloackVersion}"
-    implementation "org.keycloak:keycloak-services:${keycloackVersion}"
+    implementation "org.keycloak:keycloak-core:${keycloakVersion}"
+    implementation "org.keycloak:keycloak-server-spi:${keycloakVersion}"
+    implementation "org.keycloak:keycloak-server-spi-private:${keycloakVersion}"
+    implementation "org.keycloak:keycloak-services:${keycloakVersion}"
 
     testImplementation platform("org.junit:junit-bom:${junitVersion}")
     testImplementation "org.junit.jupiter:junit-jupiter"

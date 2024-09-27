@@ -1,4 +1,4 @@
-package com.matteoveroni.customkeycloackmapper;
+package com.matteoveroni.customkeycloakmapper;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +12,7 @@ public class CustomClaimsPropertiesReader {
 
     private static final Logger log = LoggerFactory.getLogger(CustomClaimsPropertiesReader.class);
 
-    private static final String KEYCLOACK_CUSTOM_CLAIMS = "keycloack.custom.claims";
+    private static final String KEYCLOACK_CUSTOM_CLAIMS = "keycloak.custom.claims";
 
     private CustomClaimsPropertiesReader() {
     }

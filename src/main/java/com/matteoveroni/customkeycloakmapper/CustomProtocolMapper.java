@@ -1,4 +1,4 @@
-package com.matteoveroni.customkeycloackmapper;
+package com.matteoveroni.customkeycloakmapper;
 
 import jakarta.ws.rs.core.MultivaluedMap;
 import java.util.ArrayList;

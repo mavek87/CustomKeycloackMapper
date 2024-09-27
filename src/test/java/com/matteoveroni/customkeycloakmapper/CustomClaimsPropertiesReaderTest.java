@@ -1,4 +1,4 @@
-package com.matteoveroni.customkeycloackmapper;
+package com.matteoveroni.customkeycloakmapper;
 
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ class CustomClaimsPropertiesReaderTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {"keycloack-empty-mapper.properties", "keycloack-null-mapper.properties"})
+    @ValueSource(strings = {"keycloak-empty-mapper.properties", "keycloak-null-mapper.properties"})
     public void test_read_empty_custom_claims_from_resources(String invalidConfigFile) {
         List<String> customClaims = CustomClaimsPropertiesReader.loadCustomClaimsFromConfig(invalidConfigFile);
 
